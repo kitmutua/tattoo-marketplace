@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --electric-blue: #4945FF;
+  --coral-pink: #FF8B8B;
+  --deep-purple: #2B2440;
+  --off-white: #F8F8FF;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-xl transition-all duration-300 font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-[--electric-blue] text-white hover:bg-opacity-90 hover:scale-[1.02];
+  }
+
+  .btn-secondary {
+    @apply bg-[--coral-pink] text-white hover:bg-opacity-90 hover:scale-[1.02];
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[--electric-blue] to-[--coral-pink];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
